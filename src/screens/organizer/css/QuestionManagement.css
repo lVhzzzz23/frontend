@@ -1,0 +1,10 @@
+/* Ensure Modal Close button is not hidden */
+.ant-modal-close {
+    display: block !important;
+  }
+  
+  .ant-modal-close-x {
+    color: #1890ff;
+    font-size: 20px;
+  }
+  

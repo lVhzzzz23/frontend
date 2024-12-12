@@ -1,0 +1,128 @@
+/* Toàn bộ container */
+.welcome-container {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  height: 100vh;
+  background: linear-gradient(135deg, #6a82fb, #fc5c7d); /* Gradient sắc màu */
+  font-family: 'Poppins', sans-serif;
+  color: white;
+  text-align: center;
+  padding: 20px;
+}
+
+/* Phần thông điệp chào mừng */
+.welcome-message h1 {
+  font-size: 3.5rem;
+  font-weight: bold;
+  margin-bottom: 1rem;
+  text-transform: uppercase;
+  letter-spacing: 2px;
+  text-shadow: 2px 4px 6px rgba(0, 0, 0, 0.2);
+}
+
+.welcome-message p {
+  font-size: 1.2rem;
+  font-weight: 500;
+  margin-bottom: 2rem;
+  opacity: 0.9;
+}
+
+/* Chia các phần của giao diện */
+.role-selection {
+  background-color: rgba(255, 255, 255, 0.15); /* Màu nền nhạt hơn */
+  padding: 40px;
+  border-radius: 20px;
+  box-shadow: 0 12px 35px rgba(0, 0, 0, 0.25);
+  width: 100%;
+  max-width: 450px;
+  transition: transform 0.3s ease;
+}
+
+.role-selection:hover {
+  transform: translateY(-5px);
+}
+
+/* Các nút */
+.role-button {
+  background-color: #fc5c7d;
+  color: white;
+  padding: 15px 30px;
+  font-size: 1.2rem;
+  border-radius: 50px;
+  border: none;
+  cursor: pointer;
+  transition: all 0.3s ease;
+  margin-bottom: 20px;
+  width: 100%;
+  max-width: 400px;
+}
+
+.role-button:hover {
+  background-color: #6a82fb;
+  transform: scale(1.05);
+  box-shadow: 0 10px 25px rgba(106, 130, 251, 0.5);
+}
+
+/* Section nhập mã phòng */
+.join-section {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 20px;
+}
+
+/* Input nhập mã phòng */
+.room-input {
+  padding: 15px;
+  font-size: 1.2rem;
+  border-radius: 50px;
+  border: 1px solid #fc5c7d;
+  background-color: rgba(255, 255, 255, 0.3);
+  color: white;
+  width: 80%;
+  max-width: 400px;
+  transition: border-color 0.3s ease, background-color 0.3s ease, box-shadow 0.3s ease;
+  text-align: center;
+}
+
+.room-input:focus {
+  outline: none;
+  border-color: #6a82fb;
+  background-color: rgba(106, 130, 251, 0.4);
+  box-shadow: 0 0 10px rgba(106, 130, 251, 0.5);
+}
+
+/* Nút Tham gia */
+.join-section button {
+  background-color: #6a82fb;
+  color: white;
+  padding: 15px 30px;
+  font-size: 1.2rem;
+  border-radius: 50px;
+  border: none;
+  cursor: pointer;
+  transition: all 0.3s ease;
+  width: 100%;
+  max-width: 400px;
+}
+
+.join-section button:hover {
+  background-color: #fc5c7d;
+  transform: scale(1.05);
+  box-shadow: 0 10px 25px rgba(252, 92, 125, 0.5);
+}
+
+/* Hiển thị thông báo lỗi */
+.error-message {
+  margin-top: 20px;
+  font-size: 1rem;
+  color: #ffcccc;
+  background-color: rgba(255, 0, 0, 0.1);
+  padding: 10px;
+  border-radius: 10px;
+  width: 100%;
+  max-width: 400px;
+  text-align: center;
+}

@@ -1,0 +1,36 @@
+/* QuestionForm.css */
+.form-title {
+    font-size: 1.25rem;
+    font-weight: 600;
+    margin-bottom: 20px;
+    color: #333;
+  }
+  
+  .ant-form-item-label {
+    font-weight: 500;
+    color: #555;
+  }
+  
+  .ant-input {
+    border-radius: 5px;
+  }
+  
+  .ant-select-selector {
+    border-radius: 5px;
+  }
+  
+  .form-footer .ant-btn {
+    border-radius: 5px;
+    font-size: 14px;
+    padding: 8px 20px;
+  }
+  
+  .form-footer .ant-btn-primary {
+    background-color: #4CAF50;
+    border-color: #4CAF50;
+  }
+  
+  .form-footer .ant-btn:hover {
+    opacity: 0.9;
+  }
+  

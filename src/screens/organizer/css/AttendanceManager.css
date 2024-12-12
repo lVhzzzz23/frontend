@@ -1,0 +1,91 @@
+/* Giao diện container */
+.attendance-manager {
+    max-width: 900px;
+    margin: 0 auto;
+    padding: 30px;
+    background-color: #fff;
+    border-radius: 10px;
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+  }
+  
+  h1 {
+    text-align: center;
+    font-size: 2rem;
+    color: #2c3e50;
+    margin-bottom: 20px;
+  }
+  
+  /* Bảng thông tin điểm danh */
+  table {
+    width: 100%;
+    border-collapse: collapse;
+    margin-bottom: 20px;
+  }
+  
+  th, td {
+    padding: 15px;
+    text-align: center;
+    border: 1px solid #e1e1e1;
+    font-size: 1rem;
+    color: #333;
+  }
+  
+  /* Định dạng header của bảng */
+  th {
+    background-color: #4CAF50;
+    color: white;
+    font-weight: bold;
+  }
+  
+  /* Định dạng các hàng lẻ trong bảng */
+  tr:nth-child(odd) {
+    background-color: #f9f9f9;
+  }
+  
+  /* Định dạng các hàng chẵn trong bảng */
+  tr:nth-child(even) {
+    background-color: #f1f1f1;
+  }
+  
+  /* Nút xuất file Excel */
+  button {
+    display: block;
+    width: 200px;
+    margin: 0 auto;
+    background-color: #3498db;
+    color: white;
+    font-size: 1rem;
+    padding: 12px;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+  }
+  
+  /* Hiệu ứng hover cho nút */
+  button:hover {
+    background-color: #2980b9;
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.2);
+  }
+  
+  /* Cải thiện giao diện responsive */
+  @media (max-width: 768px) {
+    .attendance-manager {
+      padding: 15px;
+    }
+  
+    h1 {
+      font-size: 1.6rem;
+    }
+  
+    table {
+      font-size: 0.9rem;
+    }
+  
+    button {
+      width: 100%;
+      font-size: 1.1rem;
+    }
+  }
+  

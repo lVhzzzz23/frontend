@@ -1,0 +1,215 @@
+/* Cấu trúc container chính */
+.face-recognition-container {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    padding: 20px;
+    background: linear-gradient(135deg, #2a7f79, #5f1c8b);
+    min-height: 100vh;
+    box-sizing: border-box;
+    border-radius: 20px;
+    box-shadow: 0px 6px 20px rgba(0, 0, 0, 0.3);
+    transition: background 0.3s ease;
+  }
+  
+  .face-recognition-container:hover {
+    background: linear-gradient(135deg, #1e5a58, #3e105d);
+  }
+  
+  /* Video container */
+  .video-container {
+    flex: 2;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    background: rgba(0, 0, 0, 0.7);
+    padding: 25px;
+    border-radius: 20px;
+    box-shadow: 0px 10px 25px rgba(0, 0, 0, 0.4);
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+  }
+  
+  .video-container:hover {
+    transform: scale(1.05);
+    box-shadow: 0px 15px 35px rgba(0, 0, 0, 0.5);
+  }
+  
+  /* Webcam wrapper */
+  .webcam-wrapper {
+    position: relative;
+    width: 100%;
+    height: 450px;
+    border-radius: 20px;
+    overflow: hidden;
+    transition: transform 0.5s ease;
+  }
+  
+  .webcam-wrapper:hover {
+    transform: scale(1.03);
+  }
+  
+  /* Canvas */
+  canvas {
+    position: absolute;
+    top: 0;
+    left: 0;
+    z-index: 1;
+    border-radius: 20px;
+  }
+  
+  /* Title */
+  h1 {
+    color: #fff;
+    font-size: 36px;
+    text-align: center;
+    margin-bottom: 20px;
+    font-weight: 800;
+    text-transform: uppercase;
+    text-shadow: 3px 3px 8px rgba(0, 0, 0, 0.6);
+  }
+  
+  /* Các danh sách khuôn mặt */
+  .face-list,
+  .left-faces-list {
+    flex: 1;
+    margin-left: 20px;
+    background-color: #fff;
+    padding: 30px;
+    border-radius: 20px;
+    box-shadow: 0px 10px 25px rgba(0, 0, 0, 0.2);
+    max-height: 500px;
+    overflow-y: auto;
+    transition: all 0.3s ease;
+  }
+  
+  .face-list:hover,
+  .left-faces-list:hover {
+    transform: scale(1.05);
+    box-shadow: 0px 15px 30px rgba(0, 0, 0, 0.25);
+  }
+  
+  /* Tiêu đề danh sách */
+  .face-list h3,
+  .left-faces-list h3 {
+    color: #333;
+    font-size: 28px;
+    margin-bottom: 25px;
+    text-align: center;
+    font-weight: 700;
+  }
+  
+  /* Danh sách không dấu chấm */
+  ul {
+    list-style: none;
+    padding: 0;
+  }
+  
+  /* Phần tử trong danh sách */
+  li {
+    padding: 15px;
+    background-color: #f9f9f9;
+    margin-bottom: 15px;
+    border-radius: 12px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    transition: all 0.3s ease;
+    cursor: pointer;
+    box-shadow: 0px 4px 10px rgba(0, 0, 0, 0.1);
+  }
+  
+  li:hover {
+    background-color: #e1f5fe;
+    transform: translateY(-4px);
+    box-shadow: 0px 8px 18px rgba(0, 0, 0, 0.3);
+  }
+  
+  /* Text trong danh sách */
+  strong {
+    font-weight: bold;
+    color: #333;
+    font-size: 18px;
+  }
+  
+  span {
+    font-size: 16px;
+    color: #666;
+  }
+  
+  /* Card nhận diện khuôn mặt */
+  .card-recognized-face {
+    display: flex;
+    flex-direction: column;
+    background: #fff;
+    padding: 25px;
+    margin-bottom: 20px;
+    border-radius: 15px;
+    box-shadow: 0px 10px 25px rgba(0, 0, 0, 0.1);
+  }
+  
+  .card-recognized-face h4 {
+    font-size: 22px;
+    font-weight: 700;
+    color: #333;
+    margin-bottom: 15px;
+  }
+  
+  .card-recognized-face p {
+    font-size: 16px;
+    color: #555;
+  }
+  
+  .card-recognized-face .time {
+    font-size: 18px;
+    font-weight: 600;
+    color: #009688;
+  }
+  
+  /* Progress Bar cho nhận diện khuôn mặt */
+  .progress-bar-container {
+    margin-top: 25px;
+    width: 100%;
+    background-color: #ddd;
+    border-radius: 25px;
+    height: 12px;
+  }
+  
+  .progress-bar {
+    height: 100%;
+    background-color: #4caf50;
+    border-radius: 25px;
+    width: 0%;
+    transition: width 0.5s ease;
+  }
+  
+  /* Định dạng text trong danh sách khuôn mặt */
+  .face-recognition-container .face-list ul li,
+  .face-recognition-container .left-faces-list ul li {
+    font-size: 18px;
+  }
+  
+  /* Media queries cho các thiết bị di động */
+  @media (max-width: 768px) {
+    .face-recognition-container {
+      flex-direction: column;
+      align-items: center;
+      padding: 20px;
+    }
+  
+    .video-container {
+      width: 100%;
+      max-width: 500px;
+    }
+  
+    .face-list,
+    .left-faces-list {
+      width: 100%;
+      max-width: 500px;
+      margin-top: 20px;
+    }
+  
+    .video-container h1 {
+      font-size: 28px;
+    }
+  }
+  

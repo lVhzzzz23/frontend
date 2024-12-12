@@ -1,0 +1,90 @@
+/* Tổng quan về layout */
+.dashboard {
+    font-family: 'Arial', sans-serif;
+    padding: 20px;
+    background-color: #f4f4f9;
+  }
+  
+  /* Tiêu đề chính */
+  .dashboard h1 {
+    font-size: 2.5rem;
+    text-align: center;
+    margin-bottom: 30px;
+    color: #333;
+  }
+  
+  /* Phần thống kê (các số liệu) */
+  .stats {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(250px, 1fr));
+    gap: 20px;
+    margin-bottom: 40px;
+  }
+  
+  /* Mỗi phần thống kê */
+  .stat {
+    background-color: #fff;
+    padding: 20px;
+    border-radius: 10px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    text-align: center;
+  }
+  
+  /* Tiêu đề của mỗi thống kê */
+  .stat h3 {
+    font-size: 1.2rem;
+    color: #666;
+    margin-bottom: 10px;
+  }
+  
+  /* Dữ liệu thống kê */
+  .stat p {
+    font-size: 2rem;
+    font-weight: bold;
+    color: #333;
+  }
+  
+  /* Phần biểu đồ */
+  .chart {
+    background-color: #fff;
+    padding: 20px;
+    border-radius: 10px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    margin-top: 30px;
+  }
+  
+  /* Sử dụng khoảng cách và các yếu tố trực quan cho các thành phần biểu đồ */
+  .chart canvas {
+    max-width: 100%;
+    height: auto;
+  }
+  
+  /* Chỉnh sửa giao diện của các bảng điều khiển của biểu đồ (legends, axes) */
+  .chart .chartjs-size-monitor {
+    display: none;
+  }
+  
+  /* Responsive cho layout */
+  @media (max-width: 768px) {
+    .dashboard {
+      padding: 10px;
+    }
+  
+    .stats {
+      grid-template-columns: 1fr;
+      margin-bottom: 20px;
+    }
+  
+    .stat {
+      padding: 15px;
+    }
+  
+    .stat h3 {
+      font-size: 1rem;
+    }
+  
+    .stat p {
+      font-size: 1.5rem;
+    }
+  }
+  

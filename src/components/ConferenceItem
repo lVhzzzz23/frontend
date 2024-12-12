@@ -1,0 +1,16 @@
+// src/components/ConferenceItem.js
+
+import React from 'react';
+
+const ConferenceItem = ({ conference, onClick, onDelete }) => {
+  return (
+    <div className="conference-item">
+      <h4>{conference.name}</h4>
+      <p>{conference.date}</p>
+      <button onClick={onClick}>Xem Người Tham Gia</button>
+      <button onClick={() => onDelete(conference.id)}>Xóa Hội Nghị</button>
+    </div>
+  );
+};
+
+export default ConferenceItem;

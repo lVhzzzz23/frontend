@@ -1,0 +1,68 @@
+import React, { useState, useEffect } from 'react';
+
+const AnswerQuestions = ({ conferenceId }) => {
+  const [questions, setQuestions] = useState([]);
+  const [loading, setLoading] = useState(true);
+  const [error, setError] = useState(null);
+
+  // Fetch questions from the Flask API
+  useEffect(() => {
+    const fetchQuestions = async () => {
+      try {
+        // Gửi yêu cầu GET đến API Flask
+        const response = await fetch(`http://localhost:5000/questions/${conferenceId}`);
+        if (!response.ok) {
+          throw new Error('Lỗi khi tải câu hỏi.');
+        }
+        const data = await response.json();
+        setQuestions(data.questions);
+        setLoading(false);
+      } catch (err) {
+        setError('Lỗi khi tải câu hỏi.');
+        setLoading(false);
+      }
+    };
+
+    fetchQuestions();
+  }, [conferenceId]); // Chạy lại khi `conferenceId` thay đổi
+
+  if (loading) {
+    return <div>Đang tải...</div>;
+  }
+
+  if (error) {
+    return <div>{error}</div>;
+  }
+
+  return (
+    <div>
+      <h2>Câu hỏi cho hội nghị {conferenceId}</h2>
+      <div className="questions-list">
+        {questions.map((question) => (
+          <div key={question._id} className="question-card">
+            <h5>{question.question}</h5>
+            {/* Hiển thị câu hỏi và các loại câu trả lời tùy theo kiểu */}
+            {question.question_type === 'text' ? (
+              <textarea placeholder="Nhập câu trả lời của bạn" />
+            ) : (
+              <div>
+                {question.options && question.options.map((option, index) => (
+                  <label key={index}>
+                    <input
+                      type={question.question_type === 'checkbox' ? 'checkbox' : 'radio'}
+                      name={question._id}
+                      value={option}
+                    />
+                    {option}
+                  </label>
+                ))}
+              </div>
+            )}
+          </div>
+        ))}
+      </div>
+    </div>
+  );
+};
+
+export default AnswerQuestions;

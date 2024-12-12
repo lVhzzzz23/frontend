@@ -1,0 +1,57 @@
+import React, { useEffect } from 'react';
+import { Form, Input, Select, Button, message, Space } from 'antd';
+import './css/QuestionForm.css'; 
+
+const { Option } = Select;
+
+const QuestionForm = ({ initialValues, onSave, onCancel }) => {
+  const [form] = Form.useForm();
+  useEffect(() => {
+    if (initialValues) {
+      form.setFieldsValue(initialValues);
+    }
+  }, [initialValues, form]);
+  const handleSubmit = async (values) => {
+    try {
+      await onSave(values);
+      form.resetFields();
+    } catch (error) {
+      message.error('Lỗi khi lưu dữ liệu!');
+    }
+  };
+
+  return (
+    <Form form={form} layout="vertical" onFinish={handleSubmit}>
+      <h3 className="form-title">Quản lý Câu hỏi</h3>
+      <Form.Item
+        name="question_text"
+        label="Câu hỏi"
+        rules={[{ required: true, message: 'Vui lòng nhập câu hỏi!' }]}
+      >
+        <Input placeholder="Nhập câu hỏi" autoFocus />
+      </Form.Item>
+      <Form.Item
+        name="question_type"
+        label="Loại câu hỏi"
+        rules={[{ required: true, message: 'Vui lòng chọn loại câu hỏi!' }]}
+      >
+        <Select placeholder="Chọn loại câu hỏi">
+          <Option value="text">Text</Option>
+          <Option value="date">Date</Option>
+          <Option value="time">Time</Option>
+        </Select>
+      </Form.Item>
+
+      <Space className="form-footer" size="middle" style={{ float: 'right' }}>
+        <Button onClick={onCancel} style={{ borderRadius: '5px', padding: '0 20px' }}>
+          Hủy
+        </Button>
+        <Button type="primary" htmlType="submit" style={{ borderRadius: '5px', padding: '0 20px' }}>
+          Lưu
+        </Button>
+      </Space>
+    </Form>
+  );
+};
+
+export default QuestionForm;

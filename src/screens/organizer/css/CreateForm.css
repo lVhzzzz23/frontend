@@ -1,0 +1,497 @@
+/* Container chính của form */
+.form-container {
+  max-width: 1000px;
+  margin: 0 auto;
+  padding: 20px;
+  background-color: #f9f9f9;
+  border: 1px solid #ddd;
+  border-radius: 8px;
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+}
+
+/* Tiêu đề form */
+.form-title {
+  font-size: 24px;
+  font-weight: bold;
+  margin-bottom: 10px;
+  text-align: center;
+  color: #333;
+}
+
+/* Tên hội nghị */
+.conference-name {
+  font-size: 18px;
+  margin-bottom: 20px;
+  text-align: center;
+  color: #555;
+}
+
+/* Nút thêm câu hỏi */
+.add-question-btn {
+  display: block;
+  width: 100%;
+  padding: 10px 20px;
+  background-color: #007bff;
+  color: white;
+  border: none;
+  border-radius: 4px;
+  font-size: 16px;
+  cursor: pointer;
+  margin-bottom: 20px;
+}
+
+.add-question-btn:hover {
+  background-color: #0056b3;
+}
+
+/* Danh sách câu hỏi */
+.questions-list {
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
+}
+
+/* Card chứa từng câu hỏi */
+.question-card {
+  padding: 15px;
+  background-color: #fff;
+  border: 1px solid #ddd;
+  border-radius: 8px;
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+}
+
+/* Input nhập câu hỏi */
+.question-input {
+  width: 90%;
+  padding: 10px;
+  margin-bottom: 10px;
+  font-size: 16px;
+  border: 1px solid #ccc;
+  border-radius: 4px;
+}
+
+/* Nút thêm mô tả */
+.add-description-btn {
+  margin: 10px 0;
+  padding: 5px 10px;
+  background-color: #007bff;
+  color: white;
+  border: none;
+  border-radius: 4px;
+  cursor: pointer;
+}
+
+.add-description-btn:hover {
+  background-color: #0056b3;
+}
+
+/* Textarea mô tả câu hỏi */
+.question-description {
+  width: 100%;
+  padding: 10px;
+  font-size: 14px;
+  border: 1px solid #ccc;
+  border-radius: 4px;
+  margin-bottom: 10px;
+}
+
+/* Select chọn loại câu hỏi */
+.question-type-select {
+  width: 100%;
+  padding: 10px;
+  font-size: 14px;
+  border: 1px solid #ccc;
+  border-radius: 4px;
+  margin-bottom: 10px;
+  background-color: #fff;
+}
+
+/* Container chứa các lựa chọn */
+.options-container {
+  margin-top: 10px;
+}
+
+/* Item từng lựa chọn */
+.option-item {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  margin-bottom: 10px;
+}
+
+/* Input nhập lựa chọn */
+.option-input {
+  flex: 1;
+  padding: 8px;
+  font-size: 14px;
+  border: 1px solid #ccc;
+  border-radius: 4px;
+}
+
+/* Nút xóa lựa chọn */
+.delete-option-btn {
+  padding: 5px 10px;
+  background-color: #dc3545;
+  color: white;
+  border: none;
+  border-radius: 4px;
+  cursor: pointer;
+}
+
+.delete-option-btn:hover {
+  background-color: #b02a37;
+}
+
+/* Nút thêm lựa chọn */
+.add-option-btn {
+  display: inline-block;
+  padding: 8px 15px;
+  background-color: #28a745;
+  color: white;
+  border: none;
+  border-radius: 4px;
+  font-size: 14px;
+  cursor: pointer;
+}
+
+.add-option-btn:hover {
+  background-color: #218838;
+}
+
+/* Nút xóa câu hỏi */
+.delete-question-btn {
+  display: inline-block;
+  margin-top: 10px;
+  padding: 8px 15px;
+  background-color: #dc3545;
+  color: white;
+  border: none;
+  border-radius: 4px;
+  font-size: 14px;
+  cursor: pointer;
+}
+
+.delete-question-btn:hover {
+  background-color: #b02a37;
+}
+
+/* Nút lưu form */
+.submit-btn {
+  display: block;
+  width: 100%;
+  padding: 10px 20px;
+  background-color: #28a745;
+  color: white;
+  border: none;
+  border-radius: 4px;
+  font-size: 16px;
+  cursor: pointer;
+  margin-top: 20px;
+}
+
+.submit-btn:hover {
+  background-color: #218838;
+}
+
+/* Dialog thông báo */
+.MuiDialog-paper {
+  padding: 20px;
+}
+
+.MuiDialogTitle-root {
+  font-size: 20px;
+  font-weight: bold;
+}
+
+.MuiDialogContent-root {
+  font-size: 16px;
+  color: #555;
+}
+
+.MuiDialogActions-root {
+  justify-content: flex-end;
+}
+
+.MuiButton-root {
+  font-size: 14px;
+  padding: 8px 15px;
+  background-color: #007bff;
+  color: white;
+}
+.form-header-image {
+  width: 100%;
+  height: auto;
+  max-height: 300px; /* Tùy chỉnh chiều cao tối đa */
+  object-fit: cover;
+  margin-bottom: 20px;
+  border-radius: 10px;
+}
+
+
+.MuiButton-root:hover {
+  background-color: #0056b3;
+}
+/* Định dạng cho phần mô tả hội nghị */
+.conference-description {
+  width: 100%;
+  padding: 15px;
+  margin: 20px 0;
+  border-radius: 8px;
+  border: 1px solid #ddd;
+  font-size: 16px;
+  line-height: 1.5;
+  background-color: #f9f9f9;
+  box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+  resize: vertical;
+  font-family: 'Arial', sans-serif;
+  transition: border-color 0.3s ease, background-color 0.3s ease;
+}
+
+.conference-description:focus {
+  outline: none;
+  border-color: #4caf50;
+  background-color: #fff;
+}
+
+.conference-description::placeholder {
+  color: #aaa;
+}
+
+/* Thêm một lớp cho form để tạo khoảng cách đẹp */
+.form-container {
+  max-width: 800px;
+  margin: 0 auto;
+  padding: 20px;
+  background-color: #ffffff;
+  border-radius: 10px;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+}
+
+.form-title {
+  font-size: 28px;
+  color: #333;
+  font-weight: 600;
+  margin-bottom: 20px;
+}
+
+.conference-name {
+  font-size: 22px;
+  color: #555;
+  margin-bottom: 20px;
+}
+
+.add-question-btn {
+  padding: 10px 20px;
+  background-color: #4caf50;
+  color: white;
+  border: none;
+  border-radius: 5px;
+  cursor: pointer;
+  transition: background-color 0.3s ease;
+}
+
+.add-question-btn:hover {
+  background-color: #45a049;
+}
+
+.submit-btn {
+  padding: 10px 20px;
+  background-color: #007bff;
+  color: white;
+  border: none;
+  border-radius: 5px;
+  cursor: pointer;
+  transition: background-color 0.3s ease;
+}
+
+.submit-btn:hover {
+  background-color: #0056b3;
+}
+
+.delete-question-btn {
+  background-color: #e57373;
+  color: white;
+  border: none;
+  padding: 5px 10px;
+  border-radius: 5px;
+  cursor: pointer;
+  margin-top: 10px;
+}
+
+.delete-question-btn:hover {
+  background-color: #f44336;
+}
+
+.question-card {
+  background-color: #fff;
+  padding: 20px;
+  margin-bottom: 20px;
+  border-radius: 8px;
+  border: 1px solid #ddd;
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.05);
+}
+
+.question-card input,
+.question-card textarea,
+.question-card select {
+  width: 100%;
+  padding: 12px;
+  margin: 8px 0;
+  border: 1px solid #ddd;
+  border-radius: 5px;
+  font-size: 16px;
+  background-color: #f9f9f9;
+}
+
+.question-card input:focus,
+.question-card textarea:focus,
+.question-card select:focus {
+  border-color: #4caf50;
+  background-color: #fff;
+}
+
+.question-card button {
+  padding: 8px 15px;
+  border: none;
+  border-radius: 5px;
+  cursor: pointer;
+}
+
+.question-card button:hover {
+  background-color: #f1f1f1;
+}
+
+
+/* Container chứa câu hỏi */
+.question-card {
+  border: 1px solid #ddd;
+  padding: 15px;
+  margin-bottom: 15px;
+  border-radius: 8px;
+  background-color: #f9f9f9;
+  position: relative;
+}
+
+/* Thêm khung cho ảnh câu hỏi */
+.question-image {
+  width: 100%;
+  height: auto;
+  border-radius: 5px;
+  margin-top: 10px;
+  object-fit: cover;
+  border: 1px solid #ddd;  /* Thêm viền nhẹ cho ảnh */
+  padding: 5px;
+  box-sizing: border-box;
+}
+
+/* Các phần tử trong câu hỏi */
+.question-input,
+.question-description,
+.question-type-select,
+.option-input {
+  width: 100%;
+  padding: 10px;
+  margin-top: 10px;
+  margin-bottom: 10px;
+  border-radius: 5px;
+  border: 1px solid #ddd;
+  box-sizing: border-box;
+  font-size: 14px;
+}
+
+/* Button cho việc thêm ảnh */
+.image-input {
+  margin-top: 10px;
+  margin-bottom: 10px;
+  padding: 5px;
+  font-size: 14px;
+  border: 1px solid #ddd;
+  border-radius: 5px;
+  width: 100%;
+}
+
+/* Button xóa ảnh */
+.delete-image-btn {
+  background-color: #e74c3c;
+  color: white;
+  border: none;
+  padding: 5px 10px;
+  border-radius: 5px;
+  cursor: pointer;
+  margin-top: 10px;
+}
+
+/* Hiển thị ảnh khi có */
+.question-image {
+  display: block;
+  max-width: 100%;
+  height: auto;
+  margin-top: 10px;
+}
+
+/* Cải tiến giao diện tổng thể */
+.add-description-btn,
+.add-option-btn,
+.submit-btn,
+.delete-question-btn {
+  background-color: #3498db;
+  color: white;
+  border: none;
+  padding: 8px 15px;
+  border-radius: 5px;
+  cursor: pointer;
+  font-size: 14px;
+}
+
+.add-description-btn:hover,
+.add-option-btn:hover,
+.submit-btn:hover,
+.delete-question-btn:hover {
+  background-color: #2980b9;
+}
+
+/* Điều chỉnh các input trong câu hỏi */
+.question-input {
+  margin-top: 10px;
+  margin-bottom: 10px;
+  padding: 8px;
+}
+
+.question-description {
+  margin-top: 10px;
+  margin-bottom: 10px;
+  padding: 10px;
+}
+
+/* Điều chỉnh giao diện cho các lựa chọn trong câu hỏi */
+.options-container {
+  margin-top: 10px;
+}
+
+.option-item {
+  display: flex;
+  justify-content: space-between;
+  margin-bottom: 10px;
+}
+
+.option-input {
+  flex: 1;
+  margin-right: 10px;
+  padding: 8px;
+}
+
+.delete-option-btn {
+  background-color: #e74c3c;
+  color: white;
+  border: none;
+  padding: 5px 10px;
+  border-radius: 5px;
+  cursor: pointer;
+}
+
+/* Thêm một chút margin cho các buttons */
+.add-question-btn,
+.submit-btn,
+.delete-question-btn {
+  margin-top: 15px;
+}

@@ -1,0 +1,56 @@
+// src/services/api.js
+
+import axios from 'axios';
+
+// Địa chỉ base URL của API
+const API_URL = 'https://your-api-url.com/api';
+
+// Khởi tạo một instance của axios với cấu hình mặc định
+const api = axios.create({
+  baseURL: API_URL,
+  headers: {
+    'Content-Type': 'application/json',
+  },
+});
+
+// Lấy danh sách hội nghị
+export const getConferences = async () => {
+  try {
+    const response = await api.get('/conferences');
+    return response.data;
+  } catch (error) {
+    console.error('Error fetching conferences:', error);
+    throw error;
+  }
+};
+
+// Lấy danh sách người tham gia của một hội nghị
+export const getParticipants = async (conferenceId) => {
+  try {
+    const response = await api.get(`/conferences/${conferenceId}/participants`);
+    return response.data;
+  } catch (error) {
+    console.error('Error fetching participants:', error);
+    throw error;
+  }
+};
+
+// Xóa hội nghị
+export const deleteConference = async (conferenceId) => {
+  try {
+    await api.delete(`/conferences/${conferenceId}`);
+  } catch (error) {
+    console.error('Error deleting conference:', error);
+    throw error;
+  }
+};
+
+// Xóa người tham gia khỏi hội nghị
+export const removeParticipant = async (conferenceId, participantId) => {
+  try {
+    await api.delete(`/conferences/${conferenceId}/participants/${participantId}`);
+  } catch (error) {
+    console.error('Error removing participant:', error);
+    throw error;
+  }
+};
